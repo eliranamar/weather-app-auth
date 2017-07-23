@@ -12,8 +12,7 @@ class CommentForm extends React.Component {
     }
     formSubmitFnc(event){
         event.preventDefault();
-        this.props
-            .addComment({text: this.state.formInputcomment, user: this.state.formInputuser});
+        this.props.addComment({text: this.state.formInputcomment, user: this.state.formInputuser});
         this.setState({ formInputcomment: ''});
     }
   render() {
