@@ -5,8 +5,6 @@ import Routesss from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
 
-
-
 class App extends React.Component {
   render() {
     return (
