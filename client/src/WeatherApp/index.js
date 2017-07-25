@@ -24,6 +24,10 @@ class WeatherApp extends React.Component {
     }
   }
 
+  onSubmitRegistration(user){
+
+  }
+
   onSubmitSearchForm(string) {
     if(this.search(string.location.name, this.state.cards)){
       alert('Allready found!');
