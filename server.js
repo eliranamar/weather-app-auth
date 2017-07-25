@@ -1,5 +1,5 @@
 const express = require("express");
-
+var User = require("./models/UserModel");
 const path = require("path");
 const authRouting = require("./server/routing/authRouting.js");
 var mongoose = require("mongoose");
@@ -43,6 +43,7 @@ var ensureAuthenticated = function(req, res, next) {
 };
 
 app.get("/currentuser", ensureAuthenticated, function(req, res) {
+
 	if (req.user) {
 		res.send(req.user.username);
 	} else {

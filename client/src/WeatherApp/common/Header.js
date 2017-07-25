@@ -1,4 +1,5 @@
 import React from 'react';
+import Logout from "./Logout";
 import {Link} from 'react-router-dom'; //Calling link to bind with router
 
 class App extends React.Component {
@@ -18,6 +19,12 @@ class App extends React.Component {
             </li>
             <li>
               <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+					    <Logout />
             </li>
           </ul>
         </div>

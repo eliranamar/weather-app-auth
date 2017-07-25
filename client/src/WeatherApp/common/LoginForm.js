@@ -1,20 +1,9 @@
 import React from "react";
 
-const RegistrationForm = props => {
-	//Calling a props function via inner function
+const LoginForm = props => {
 	return (
 		<div>
 			<form onSubmit={props.handleSubmit}>
-				<div className="form-group">
-					<label htmlFor="email">Email address:</label>
-					<input
-						value={props.user.email}
-						type="email"
-						className="form-control"
-						id="email"
-						onChange={props.changeUser}
-					/>
-				</div>
 				<div className="form-group">
 					<label htmlFor="username">Username:</label>
 					<input
@@ -36,11 +25,11 @@ const RegistrationForm = props => {
 					/>
 				</div>
 				<button type="submit" className="btn btn-default">
-					Submit
+					Login
 				</button>
 			</form>
 		</div>
 	);
 };
 
-export default RegistrationForm;
+export default LoginForm;

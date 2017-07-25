@@ -3,8 +3,8 @@ import React from "react";
 class About extends React.Component {
 	render() {
 		return (
-			<div>
-				About
+			<div className="text-center">
+				<h2>About</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					Reprehenderit, sit quis repudiandae praesentium repellat cupiditate
