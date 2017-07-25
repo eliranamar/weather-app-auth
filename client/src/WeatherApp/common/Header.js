@@ -1,8 +1,14 @@
 import React from 'react';
 import Logout from "./Logout";
 import {Link} from 'react-router-dom'; //Calling link to bind with router
+import { Route, Redirect } from "react-router";
 
 class App extends React.Component {
+
+  componentDidMount () {
+
+  }
+
   render() {
     return (
       <nav className="navbar navbar-inverse">
