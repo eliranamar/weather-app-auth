@@ -5,11 +5,25 @@ import { Route, Redirect } from "react-router";
 
 class App extends React.Component {
 
-  componentDidMount () {
+constructor(props) {
+  super(props);
 
+  this.state = {
+    loggedIn: false
   }
 
+
+}
+
+
+
+
   render() {
+let login = <Link to="/login">Login</Link>;
+let logout = <Link to="/logout">({this.props.user.username}) - Logout</Link>;
+
+let loginOrOut = this.props.user.id ? logout : login;
+
     return (
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
@@ -27,11 +41,9 @@ class App extends React.Component {
               <Link to="/register">Register</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              {loginOrOut}
             </li>
-            <li>
-					    <Logout />
-            </li>
+            
           </ul>
         </div>
       </nav>

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Route, Redirect } from "react-router";
+import { Route, Redirect } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm";
 
 class Registration extends React.Component {
@@ -21,15 +21,15 @@ class Registration extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		var that = this;
+		let that = this;
 		axios
 			.post("/auth/register", this.state.user)
 			.then(function(response) {
 				console.log(response);
-				let _id = response.data._id;
 				let user = {};
-				user._id = _id;
-				that.setState({ user });
+				user.id = response.data._id;
+				user.username = response.data.username;
+				that.props.setUserState(user);
 			})
 			.catch(function(error) {
 				console.log(error);

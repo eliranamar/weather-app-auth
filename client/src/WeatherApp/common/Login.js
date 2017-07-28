@@ -18,11 +18,16 @@ class Login extends React.Component {
 	}
 
 	handleSubmit(event) {
+		let that = this;
 		event.preventDefault();
 		axios
 			.post("/auth/login", this.state.user)
 			.then(function(response) {
 				console.log(response);
+				let user = {};
+				user.id = response.data._id;
+				user.username = response.data.username;
+				that.props.setUserState(user);
 			})
 			.catch(function(error) {
 				console.log(error);
